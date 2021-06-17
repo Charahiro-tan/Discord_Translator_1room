@@ -1,0 +1,1 @@
+# Discord_Translator_1room
