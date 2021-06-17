@@ -30,6 +30,7 @@ langlist = list(constant.LANGUAGES.keys())
 del_word_compiled = [re.compile(w) for w in del_word]
 
 async def gas_translate(msg, lang_tgt, lang_src):
+    gas_use = False
     params = {
         'text' : msg,
         'target' : lang_tgt,
@@ -42,8 +43,8 @@ async def gas_translate(msg, lang_tgt, lang_src):
                 js = await r.json()
                 if js['code'] == 200:
                     translated_text = js.get('text')
-                    print('(GAS)')
-            return translated_text
+                    gas_use = True
+            return translated_text, gas_use
 
 
 async def web_hook(message, msg, author, thumbnail):
@@ -110,9 +111,10 @@ async def on_message(message):
     ############################################
     
     translated = ''
+    gas_use = False
     
     if GAS_URL:
-        translated = await gas_translate(msg, lang_tgt, lang_src)
+        translated, gas_use = await gas_translate(msg, lang_tgt, lang_src)
     if not translated:
         trans_task = asyncio.create_task(g.translate(msg, lang_tgt,lang_src))
         translated = await trans_task
@@ -120,7 +122,13 @@ async def on_message(message):
     if not translated:
         return
     
-    print(f'({display_name}){message.content}({lang_src}):{translated}({lang_tgt})')
+    p = f'({display_name}){message.content}({lang_src}):{translated}({lang_tgt})'
+    if gas_use:
+        p = p + '(GAS)'
+    else:
+        p = p + '(No GAS)'
+    print(p)
+    
     display_name = display_name + f'({lang_src} > {lang_tgt})'
     await web_hook(message, translated, display_name, author_thumbnail)
 
