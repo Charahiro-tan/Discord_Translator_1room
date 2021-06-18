@@ -22,7 +22,17 @@ try:
 except:
     GAS_URL = ''
 
-ignore_id = []
+try:
+    IGNORE_ID = os.environ['IGNORE_ID']
+    l = IGNORE_ID.split(':')
+    if len(l) >= 1:
+        ignore_ids = [int(id) for id in l]
+    else:
+        ignore_ids = []
+except:
+    ignore_ids = []
+
+
 del_word = [r"<a?:\w+?:\d+?>",r"<@! \d+>",r"^(.)\1+$",r"https?://[\w!\?/\+\-_~=;\.,\*&@#\$%\(\)'\[\]]+",
     r"^草$",r"^!.*",r"^w$",r"^ｗ$",r"ww+",r"ｗｗ+",r"^\s+"]
 
@@ -67,7 +77,8 @@ async def on_message(message):
     if message.channel.id != CHANNEL_ID:
         return
     
-    if message.author.id in ignore_id:
+    if message.author.id in ignore_ids:
+        print('無視ユーザーです')
         return
     
     msg = message.content
