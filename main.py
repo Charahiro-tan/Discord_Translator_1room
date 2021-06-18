@@ -7,7 +7,7 @@ import aiohttp
 import discord
 import ujson
 
-client = discord.Client()
+client = discord.Client(activity=discord.Game(name='neko2.net/juroom_ug'))
 g = AsyncTranslator(url_suffix='co.jp')
 
 DISCORD_TOKEN = os.environ['DISCORD_TOKEN']
