@@ -1,6 +1,7 @@
 # Discord_Translator_1room  
 Discord translator that posts with webhooks that can be deployed on Heroku  
-HerokuにデプロイできるDiscordの翻訳Botです。  
+Herokuの無料枠にデプロイできるDiscordの翻訳Botです。  
+詳しい使い方はDiscordサーバーに書いてあります。  
   
 It supports translation of one channel and posts with the appearance of the author on the Webhook.  
 1つのチャンネルの翻訳に対応し、Webhookで発言者の見た目で投稿します。
@@ -20,3 +21,7 @@ It supports translation of one channel and posts with the appearance of the auth
 |---|---|
 |IGNORE_ID|Author IDs to ignore (":" delimited, integers)|
 |GAS_URL|Look at Discord Server|
+  
+## Other
+- [__Discord Server__](https://discord.gg/bhpBKCJV8R)
+- [Twitter](https://twitter.com/__Charahiro)
