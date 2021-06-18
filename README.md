@@ -15,7 +15,7 @@ It supports translation of one channel and posts with the appearance of the auth
 |CHANNEL_ID|Channel ID (integer)|
 |CHANNEL_URL|URL of the channel of Webhook|
 |HOME_LANG|Any language will be translated into this language (e.g. ja)|
-|HOME_TO_LANG|Translation language when posted in HOME_LANG language|
+|HOME_TO_LANG|Translation language when posted in HOME_LANG language(e.g. en)|
   
 |Options(オプション)||
 |---|---|
