@@ -78,7 +78,6 @@ async def on_message(message):
         return
     
     if message.author.id in ignore_ids:
-        print('無視ユーザーです')
         return
     
     msg = message.content
