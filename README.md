@@ -5,6 +5,7 @@ HerokuにデプロイできるDiscordの翻訳Botです。
 It supports translation of one channel and posts with the appearance of the author on the Webhook.  
 1つのチャンネルの翻訳に対応し、Webhookで発言者の見た目で投稿します。
   
+![image](img/1room.gif)
 ## Environment variable(環境変数)  
   
 |Required(必須)||
