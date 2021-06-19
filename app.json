@@ -1,0 +1,42 @@
+{
+    "name": "Discord Translator 1Room",
+    "description": "Discord translation bot.",
+    "repository": "https://github.com/Charahiro-tan/Discord_Translator_1room",
+    "logo": "",
+    "keywords": [
+        "discord",
+        "translation"
+    ],
+    "env":{
+        "DISCORD_TOKEN":{
+            "description": "Discord bot token(ボットのトークン)",
+            "required": true
+        },
+        "CHANNEL_ID":{
+            "description": "ID of the channel to translate(int)(翻訳するチャンネルのID(整数))",
+            "required": true
+        },
+        "CHANNEL_URL":{
+            "description": "Webhook URL of the channel to translate(翻訳するチャンネルのWebhookのURL)",
+            "required": true
+        },
+        "HOME_LANG":{
+            "description": "Any language can be translated into this language(メインの言語)",
+            "value": "ja",
+            "required": true
+        },
+        "HOME_TO_LANG":{
+            "description": "Language to be translated when using 'HOME_LANG'(HOME_LANGの時の翻訳先言語)",
+            "value": "en",
+            "required": true
+        },
+        "GAS_URL":{
+            "description": "When using Google Apps Script translation, use the URL(GASでデプロイした翻訳を使うときはURLを入力)",
+            "required": false
+        },
+        "IGNORE_ID":{
+            "description": "If there is a user you want to ignore, enter the ID(int) separated by a colon(無視ユーザーのID(数字)を':'区切りで入力",
+            "required": false
+        }
+    }
+}
