@@ -33,7 +33,7 @@ except:
     ignore_ids = []
 
 
-del_word = [r"<a?:\w+?:\d+?>",r"<@! \d+>",r"^(.)\1+$",r"https?://[\w!\?/\+\-_~=;\.,\*&@#\$%\(\)'\[\]]+",
+del_word = [r"<a?:\w+?:\d+?>",r"<@!\d+>",r"^(.)\1+$",r"https?://[\w!\?/\+\-_~=;\.,\*&@#\$%\(\)'\[\]]+",
     r"^草$",r"^!.*",r"^w$",r"^ｗ$",r"ww+",r"ｗｗ+",r"^\s+"]
 
 langlist = list(constant.LANGUAGES.keys())
@@ -139,7 +139,6 @@ async def on_message(message):
         p = p + '(No GAS)'
     print(p)
     
-    display_name = display_name + f'({lang_src} > {lang_tgt})'
     await web_hook(message, translated, display_name, author_thumbnail)
 
 client.run(DISCORD_TOKEN)
