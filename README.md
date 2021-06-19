@@ -1,4 +1,4 @@
-# Discord_Translator_1room [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Charahiro-tan/Discord_Translator_1room)
+# Discord_Translator_1room [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Charahiro-tan/Discord_Translator_1room) [![CodeQL](https://github.com/Charahiro-tan/Discord_Translator_1room/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Charahiro-tan/Discord_Translator_1room/actions/workflows/codeql-analysis.yml)
 Discord translator that posts with webhooks that can be deployed on Heroku  
 Herokuの無料枠にデプロイできるDiscordの翻訳Botです。  
 詳しい使い方はDiscordサーバーに書いてあります。  
