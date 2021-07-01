@@ -101,8 +101,6 @@ async def on_message(message: Message):
         if split_msg[0].lower() in langlist:
             lang_tgt = split_msg[0]
             msg = ':'.join(split_msg[1:])
-            # detect_task = asyncio.create_task(g.detect(msg))
-            # lang_src = await detect_task
             lang_src = await g.detect(msg)
             lang_src = lang_src[0]
         else:
@@ -111,8 +109,6 @@ async def on_message(message: Message):
         msg = ':'.join(split_msg[0:])
     
     if lang_tgt is None:
-        # detect_task = asyncio.create_task(g.detect(msg))
-        # lang_src = await detect_task
         lang_src = await g.detect(msg)
         lang_src = lang_src[0]
         
@@ -129,8 +125,6 @@ async def on_message(message: Message):
     if GAS_URL:
         translated, gas_use = await gas_translate(msg, lang_tgt, lang_src)
     if not translated:
-        # trans_task = asyncio.create_task(g.translate(msg, lang_tgt,lang_src))
-        # translated = await trans_task
         translated = await g.translate(msg, lang_tgt,lang_src)
     
     if not translated:
